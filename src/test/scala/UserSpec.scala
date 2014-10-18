@@ -20,7 +20,7 @@ class UserSpec extends Specification {
       		)
       	)
 
-      	"have FakeServiceB" in running(fakeAppA) {
+      	"have FakeServiceB" in running(fakeAppB) {
       		// doesnt work gets FakeServiceA
 			UserController.doit() === "FakeServiceB"
 		}
