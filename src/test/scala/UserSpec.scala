@@ -6,22 +6,21 @@ class UserSpec extends Specification {
 	"User" should {
 		val fakeAppA = new FakeApplication(
 			additionalPlugins = Seq(
-      			"FakeServiceA"
-      		)
-      	)
+				"FakeServiceA"
+				)
+			)
 
-      	"have FakeServiceA " in running(fakeAppA) {
+		"have FakeServiceA " in running(fakeAppA) {
 			UserController.doit() === "FakeServiceA"
 		}
 
 		val fakeAppB = new FakeApplication(
 			additionalPlugins = Seq(
-      			"FakeServiceB"
-      		)
-      	)
+				"FakeServiceB"
+				)
+			)
 
-      	"have FakeServiceB" in running(fakeAppB) {
-      		// doesnt work gets FakeServiceA
+		"have FakeServiceB" in running(fakeAppB) {
 			UserController.doit() === "FakeServiceB"
 		}
 	}
